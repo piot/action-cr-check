@@ -6,7 +6,7 @@ import * as fs from 'fs';
 function findInDir(dir : fs.PathLike, filter : RegExp, fileList : string[] = []) : string[] {
   const files = fs.readdirSync(dir);
 
-  files.forEach((file) => {
+  files.forEach((file : string) => {
     const filePath = path.join(dir.toString(), file);
     const fileStat = fs.lstatSync(filePath);
 
@@ -44,7 +44,12 @@ function checkFile(filename : fs.PathLike) : number[] {
 async function run() {
   try {
     let detectedErrorsCount = 0
-    const allFiles = findInDir('.',  /(\.cs|\.go|\.ts|\.js)$/)
+    let directory = core.getInput('path')
+    if (directory == '') {
+      directory = '.'
+    }
+  
+    const allFiles = findInDir(directory,  /(\.cs|\.go|\.ts|\.js)$/)
     for (const f of allFiles) {
       const violations = checkFile(f)
       if (violations.length) {
