@@ -1,0 +1,28 @@
+{
+  "name": "action-cr-check",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piot/action-cr-check.git"
+  },
+  "author": "Peter Bjorklund",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piot/action-cr-check/issues"
+  },
+  "homepage": "https://github.com/piot/action-cr-check#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.8",
+    "typescript": "^3.7.2"
+  }
+}

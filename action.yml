@@ -1,0 +1,10 @@
+# https://help.github.com/en/articles/metadata-syntax-for-github-actions
+name: 'CR Check'
+description: 'Github Action for checking CR in source files'
+author: 'piot'
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
+branding:
+  color: 'green'
+  icon: 'package'
