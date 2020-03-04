@@ -5,6 +5,7 @@
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
+    "deploy": "tsc && npm prune --production",
     "test": "jest"
   },
   "repository": {
